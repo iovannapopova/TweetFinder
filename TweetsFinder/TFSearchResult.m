@@ -10,10 +10,11 @@
 
 @implementation TFSearchResult
 
--(instancetype)initWithText:(NSAttributedString*)text{
+-(instancetype)initWithText:(NSAttributedString*)text nextResultID:(NSNumber *)nextResultID{
     self = [super init];
     if (self) {
         _text = [text copy];
+        _nextResultID = nextResultID;
     }
     return self;
 }

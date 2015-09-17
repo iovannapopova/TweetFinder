@@ -30,6 +30,8 @@
 		72827B6A1BAB01F100F22D91 /* TFSearchResultTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B681BAB01F100F22D91 /* TFSearchResultTextView.m */; settings = {ASSET_TAGS = (); }; };
 		72827B6D1BAB06CF00F22D91 /* TFTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B6C1BAB06CF00F22D91 /* TFTableViewDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		72827B6E1BAB06CF00F22D91 /* TFTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B6C1BAB06CF00F22D91 /* TFTableViewDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		72827B711BAB2BA500F22D91 /* TFLoadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B701BAB2BA500F22D91 /* TFLoadTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		72827B721BAB2BA500F22D91 /* TFLoadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B701BAB2BA500F22D91 /* TFLoadTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		72827B681BAB01F100F22D91 /* TFSearchResultTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchResultTextView.m; sourceTree = "<group>"; };
 		72827B6B1BAB06CF00F22D91 /* TFTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTableViewDelegate.h; sourceTree = "<group>"; };
 		72827B6C1BAB06CF00F22D91 /* TFTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFTableViewDelegate.m; sourceTree = "<group>"; };
+		72827B6F1BAB2BA500F22D91 /* TFLoadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFLoadTableViewCell.h; sourceTree = "<group>"; };
+		72827B701BAB2BA500F22D91 /* TFLoadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFLoadTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				72827B601BAAF94700F22D91 /* TFTableViewDataSource.m */,
 				72827B631BAAFEC500F22D91 /* TFSearchResultTableViewCell.h */,
 				72827B641BAAFEC500F22D91 /* TFSearchResultTableViewCell.m */,
+				72827B6F1BAB2BA500F22D91 /* TFLoadTableViewCell.h */,
+				72827B701BAB2BA500F22D91 /* TFLoadTableViewCell.m */,
 				72827B671BAB01F100F22D91 /* TFSearchResultTextView.h */,
 				72827B681BAB01F100F22D91 /* TFSearchResultTextView.m */,
 				722FF5361BA9B45900B306B9 /* NSArray+TFAdditions.h */,
@@ -270,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				722FF5331BA9888900B306B9 /* TFRemoteSearchEngine.m in Sources */,
+				72827B711BAB2BA500F22D91 /* TFLoadTableViewCell.m in Sources */,
 				72827B651BAAFEC500F22D91 /* TFSearchResultTableViewCell.m in Sources */,
 				72827B691BAB01F100F22D91 /* TFSearchResultTextView.m in Sources */,
 				722FF5381BA9B45900B306B9 /* NSArray+TFAdditions.m in Sources */,
@@ -290,6 +297,7 @@
 				722FF5301BA9810D00B306B9 /* TFSearchBarDelegate.m in Sources */,
 				722FF5391BA9B45900B306B9 /* NSArray+TFAdditions.m in Sources */,
 				72827B6A1BAB01F100F22D91 /* TFSearchResultTextView.m in Sources */,
+				72827B721BAB2BA500F22D91 /* TFLoadTableViewCell.m in Sources */,
 				72827B6E1BAB06CF00F22D91 /* TFTableViewDelegate.m in Sources */,
 				722FF53D1BA9B69800B306B9 /* TFSearchResult.m in Sources */,
 				722FF5241BA97CEA00B306B9 /* TweetsFinderTests.m in Sources */,

@@ -87,7 +87,7 @@ static CGFloat kHeightSearchBar = 80;
 
 - (id<TFSearchEngine>)searchEngine{
     if (_searchEngine == nil) {
-        NSURL* url = [NSURL URLWithString:@"https://api.vk.com/method/newsfeed.search.json?"];
+        NSURL* url = [NSURL URLWithString:@"https://api.vk.com/method/newsfeed.search.json?count=10"];
         NSString* searchTermParameterName = @"q";
         
         TFRemoteSearchEngineResultParser parser = ^(NSDictionary* resultDictionary){
@@ -97,7 +97,8 @@ static CGFloat kHeightSearchBar = 80;
             [mutResultDict removeObjectAtIndex:0];
             
             return [[mutResultDict copy] tf_map:^TFSearchResult*(NSDictionary* dict) {
-                return [[TFSearchResult alloc] initWithText:[[NSAttributedString alloc] initWithString:[dict objectForKey:@"text"]]];
+                return [[TFSearchResult alloc] initWithText:[[NSAttributedString alloc] initWithString:[dict objectForKey:@"text"]]
+                                               nextResultID:[dict objectForKey:@"from_id"]];
             }];
         };
         _searchEngine = [[TFRemoteSearchEngine alloc] initWithTemplateURL:url searchTermParameterName:searchTermParameterName resultParser:parser];

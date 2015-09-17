@@ -11,7 +11,9 @@
 @interface TFSearchResult : NSObject
 
 @property (nonatomic,copy,readonly) NSAttributedString* text;
+@property (nonatomic,readonly) NSNumber* nextResultID;
 
--(instancetype)initWithText:(NSAttributedString*)text;
+
+-(instancetype)initWithText:(NSAttributedString*)text nextResultID:(NSNumber*)nextResultID;
 
 @end

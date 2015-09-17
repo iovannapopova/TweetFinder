@@ -9,6 +9,12 @@
 #import "TFTableViewDataSource.h"
 #import "TFSearchResult.h"
 #import "TFSearchResultTableViewCell.h"
+#import "TFLoadTableViewCell.h"
+
+typedef NS_ENUM(NSInteger, TFTableViewType){
+    TFTableViewResultType,
+    TFTableViewIndicatorType
+};
 
 @implementation TFTableViewDataSource
 
@@ -20,22 +26,58 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.searchResultsArray count];
+    switch (section) {
+        case TFTableViewResultType:
+            return [self.searchResultsArray count];
+            break;
+        
+        case TFTableViewIndicatorType:
+            return 1;
+            break;
+            
+        default:
+            break;
+    }
+    return 0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString* resultCellIdentifier = @"ResultCell";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:resultCellIdentifier];
-    if (!cell) {
-        cell = [[TFSearchResultTableViewCell alloc] initWithReuseIdentifier:resultCellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    switch (indexPath.section) {
+        case TFTableViewResultType:
+        {
+            static NSString* resultCellID = @"ResultCell";
+            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:resultCellID];
+            if (!cell) {
+                cell = [[TFSearchResultTableViewCell alloc] initWithReuseIdentifier:resultCellID];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            [(TFSearchResultTableViewCell*)cell setSearchResult:(TFSearchResult*)[self.searchResultsArray objectAtIndex:indexPath.row]];
+            return cell;
+        }
+            break;
+            
+        case TFTableViewIndicatorType:
+        {
+            static NSString* indicatorCellID = @"IndicatorCell";
+            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:indicatorCellID];
+            if (!cell) {
+                cell = [[TFLoadTableViewCell alloc] initWithReuseIdentifier:indicatorCellID];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            return cell;
+        }
+            break;
+            
+        default:
+            break;
     }
-    [(TFSearchResultTableViewCell*)cell setSearchResult:(TFSearchResult*)[self.searchResultsArray objectAtIndex:indexPath.row]];
-    return cell;
+    
+    return nil;
 }
 
 @end
