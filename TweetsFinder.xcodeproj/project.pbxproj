@@ -22,6 +22,14 @@
 		722FF5391BA9B45900B306B9 /* NSArray+TFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 722FF5371BA9B45900B306B9 /* NSArray+TFAdditions.m */; };
 		722FF53C1BA9B69800B306B9 /* TFSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 722FF53B1BA9B69800B306B9 /* TFSearchResult.m */; };
 		722FF53D1BA9B69800B306B9 /* TFSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 722FF53B1BA9B69800B306B9 /* TFSearchResult.m */; };
+		72827B611BAAF94700F22D91 /* TFTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B601BAAF94700F22D91 /* TFTableViewDataSource.m */; settings = {ASSET_TAGS = (); }; };
+		72827B621BAAF94700F22D91 /* TFTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B601BAAF94700F22D91 /* TFTableViewDataSource.m */; settings = {ASSET_TAGS = (); }; };
+		72827B651BAAFEC500F22D91 /* TFSearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B641BAAFEC500F22D91 /* TFSearchResultTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		72827B661BAAFEC500F22D91 /* TFSearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B641BAAFEC500F22D91 /* TFSearchResultTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		72827B691BAB01F100F22D91 /* TFSearchResultTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B681BAB01F100F22D91 /* TFSearchResultTextView.m */; settings = {ASSET_TAGS = (); }; };
+		72827B6A1BAB01F100F22D91 /* TFSearchResultTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B681BAB01F100F22D91 /* TFSearchResultTextView.m */; settings = {ASSET_TAGS = (); }; };
+		72827B6D1BAB06CF00F22D91 /* TFTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B6C1BAB06CF00F22D91 /* TFTableViewDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		72827B6E1BAB06CF00F22D91 /* TFTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72827B6C1BAB06CF00F22D91 /* TFTableViewDelegate.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +65,14 @@
 		722FF5371BA9B45900B306B9 /* NSArray+TFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TFAdditions.m"; sourceTree = "<group>"; };
 		722FF53A1BA9B69800B306B9 /* TFSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSearchResult.h; sourceTree = "<group>"; };
 		722FF53B1BA9B69800B306B9 /* TFSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchResult.m; sourceTree = "<group>"; };
+		72827B5F1BAAF94700F22D91 /* TFTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTableViewDataSource.h; sourceTree = "<group>"; };
+		72827B601BAAF94700F22D91 /* TFTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFTableViewDataSource.m; sourceTree = "<group>"; };
+		72827B631BAAFEC500F22D91 /* TFSearchResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSearchResultTableViewCell.h; sourceTree = "<group>"; };
+		72827B641BAAFEC500F22D91 /* TFSearchResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchResultTableViewCell.m; sourceTree = "<group>"; };
+		72827B671BAB01F100F22D91 /* TFSearchResultTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSearchResultTextView.h; sourceTree = "<group>"; };
+		72827B681BAB01F100F22D91 /* TFSearchResultTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchResultTextView.m; sourceTree = "<group>"; };
+		72827B6B1BAB06CF00F22D91 /* TFTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTableViewDelegate.h; sourceTree = "<group>"; };
+		72827B6C1BAB06CF00F22D91 /* TFTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFTableViewDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +125,14 @@
 				722FF5321BA9888900B306B9 /* TFRemoteSearchEngine.m */,
 				722FF53A1BA9B69800B306B9 /* TFSearchResult.h */,
 				722FF53B1BA9B69800B306B9 /* TFSearchResult.m */,
+				72827B6B1BAB06CF00F22D91 /* TFTableViewDelegate.h */,
+				72827B6C1BAB06CF00F22D91 /* TFTableViewDelegate.m */,
+				72827B5F1BAAF94700F22D91 /* TFTableViewDataSource.h */,
+				72827B601BAAF94700F22D91 /* TFTableViewDataSource.m */,
+				72827B631BAAFEC500F22D91 /* TFSearchResultTableViewCell.h */,
+				72827B641BAAFEC500F22D91 /* TFSearchResultTableViewCell.m */,
+				72827B671BAB01F100F22D91 /* TFSearchResultTextView.h */,
+				72827B681BAB01F100F22D91 /* TFSearchResultTextView.m */,
 				722FF5361BA9B45900B306B9 /* NSArray+TFAdditions.h */,
 				722FF5371BA9B45900B306B9 /* NSArray+TFAdditions.m */,
 				722FF5111BA97CEA00B306B9 /* Main.storyboard */,
@@ -189,7 +213,7 @@
 		722FF4FC1BA97CEA00B306B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Iovanna Popova";
 				TargetAttributes = {
 					722FF5031BA97CEA00B306B9 = {
@@ -246,11 +270,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				722FF5331BA9888900B306B9 /* TFRemoteSearchEngine.m in Sources */,
+				72827B651BAAFEC500F22D91 /* TFSearchResultTableViewCell.m in Sources */,
+				72827B691BAB01F100F22D91 /* TFSearchResultTextView.m in Sources */,
 				722FF5381BA9B45900B306B9 /* NSArray+TFAdditions.m in Sources */,
+				72827B611BAAF94700F22D91 /* TFTableViewDataSource.m in Sources */,
 				722FF52F1BA9810D00B306B9 /* TFSearchBarDelegate.m in Sources */,
 				722FF53C1BA9B69800B306B9 /* TFSearchResult.m in Sources */,
 				722FF5101BA97CEA00B306B9 /* TFViewController.m in Sources */,
 				722FF50D1BA97CEA00B306B9 /* AppDelegate.m in Sources */,
+				72827B6D1BAB06CF00F22D91 /* TFTableViewDelegate.m in Sources */,
 				722FF50A1BA97CEA00B306B9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,8 +289,12 @@
 			files = (
 				722FF5301BA9810D00B306B9 /* TFSearchBarDelegate.m in Sources */,
 				722FF5391BA9B45900B306B9 /* NSArray+TFAdditions.m in Sources */,
+				72827B6A1BAB01F100F22D91 /* TFSearchResultTextView.m in Sources */,
+				72827B6E1BAB06CF00F22D91 /* TFTableViewDelegate.m in Sources */,
 				722FF53D1BA9B69800B306B9 /* TFSearchResult.m in Sources */,
 				722FF5241BA97CEA00B306B9 /* TweetsFinderTests.m in Sources */,
+				72827B621BAAF94700F22D91 /* TFTableViewDataSource.m in Sources */,
+				72827B661BAAFEC500F22D91 /* TFSearchResultTableViewCell.m in Sources */,
 				722FF5341BA9888900B306B9 /* TFRemoteSearchEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +350,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -383,6 +416,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TweetsFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appreal.Project001.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -393,6 +427,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TweetsFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appreal.Project001.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -411,6 +446,7 @@
 				);
 				INFOPLIST_FILE = TweetsFinderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appreal.Project001.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TweetsFinder.app/TweetsFinder";
 			};
@@ -426,6 +462,7 @@
 				);
 				INFOPLIST_FILE = TweetsFinderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appreal.Project001.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TweetsFinder.app/TweetsFinder";
 			};

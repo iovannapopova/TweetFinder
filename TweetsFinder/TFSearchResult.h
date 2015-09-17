@@ -10,8 +10,8 @@
 
 @interface TFSearchResult : NSObject
 
-@property (nonatomic,copy,readonly) NSString* text;
+@property (nonatomic,copy,readonly) NSAttributedString* text;
 
--(instancetype)initWithText:(NSString*)text NS_DESIGNATED_INITIALIZER;
+-(instancetype)initWithText:(NSAttributedString*)text;
 
 @end

@@ -12,6 +12,8 @@
 #import "TFRemoteSearchEngine.h"
 #import "NSArray+TFAdditions.h"
 #import "TFSearchResult.h"
+#import "TFTableViewDataSource.h"
+#import "TFTableViewDelegate.h"
 
 @interface TFViewController () <TFSearchTextProtocol>
 
@@ -19,6 +21,8 @@
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) TFSearchBarDelegate* searchBarDelegate;
 @property (nonatomic, strong) id<TFSearchEngine> searchEngine;
+@property (nonatomic, strong) TFTableViewDataSource* tableViewDataSource;
+@property (nonatomic, strong) TFTableViewDelegate* tableViewDelegate;
 
 @end
 
@@ -53,8 +57,24 @@ static CGFloat kHeightSearchBar = 80;
 - (UITableView*)tableView{
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] init];
+        _tableView.dataSource = self.tableViewDataSource;
+        _tableView.delegate = self.tableViewDelegate;
     }
     return _tableView;
+}
+
+- (TFTableViewDataSource*)tableViewDataSource{
+    if (_tableViewDataSource == nil) {
+        _tableViewDataSource = [[TFTableViewDataSource alloc] init];
+    }
+    return _tableViewDataSource;
+}
+
+- (TFTableViewDelegate*)tableViewDelegate{
+    if (_tableViewDelegate == nil) {
+        _tableViewDelegate = [[TFTableViewDelegate alloc] init];
+    }
+    return _tableViewDelegate;
 }
 
 - (TFSearchBarDelegate*)searchBarDelegate{
@@ -77,7 +97,7 @@ static CGFloat kHeightSearchBar = 80;
             [mutResultDict removeObjectAtIndex:0];
             
             return [[mutResultDict copy] tf_map:^TFSearchResult*(NSDictionary* dict) {
-                return [[TFSearchResult alloc] initWithText:[dict objectForKey:@"text"]];
+                return [[TFSearchResult alloc] initWithText:[[NSAttributedString alloc] initWithString:[dict objectForKey:@"text"]]];
             }];
         };
         _searchEngine = [[TFRemoteSearchEngine alloc] initWithTemplateURL:url searchTermParameterName:searchTermParameterName resultParser:parser];
@@ -91,7 +111,13 @@ static CGFloat kHeightSearchBar = 80;
 
 - (void)searchText:(NSString*)text searchBarDelegate:(TFSearchBarDelegate*)searchBarDelegate{
    [self.searchEngine searchForString:text completionHandler:^(NSArray *array, NSError *error) {
-       //
+       if (!error) {
+           dispatch_async(dispatch_get_main_queue(), ^{
+               self.tableViewDataSource.searchResultsArray = array;
+               self.tableViewDelegate.searchResultsArray = array;
+               [self.tableView reloadData];
+           });
+       }
    }];
 }
 

@@ -10,7 +10,7 @@
 
 @implementation TFSearchResult
 
--(instancetype)initWithText:(NSString*)text{
+-(instancetype)initWithText:(NSAttributedString*)text{
     self = [super init];
     if (self) {
         _text = [text copy];

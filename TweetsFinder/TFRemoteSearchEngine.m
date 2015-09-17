@@ -7,6 +7,8 @@
 //
 
 #import "TFRemoteSearchEngine.h"
+#import "NSArray+TFAdditions.h"
+#import "TFSearchResult.h"
 
 @interface TFRemoteSearchEngine ()
 
@@ -48,7 +50,11 @@
                 NSError* jsonError;
                 NSDictionary* resultDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
                 if (resultDictionary && self.resultParser) {
-                    dispatch_async(dispatch_get_main_queue(), ^{ completionHandler(self.resultParser(resultDictionary), nil); });
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completionHandler([self.resultParser(resultDictionary) tf_filter:^BOOL(TFSearchResult* result) {
+                        return [result.text.string length]!= 0;
+                    }], nil);
+                    });
                 }
                 else {
                     dispatch_async(dispatch_get_main_queue(), ^{ completionHandler(nil, jsonError); });
@@ -65,6 +71,5 @@
     }];
     [task resume];
 }
-
 
 @end

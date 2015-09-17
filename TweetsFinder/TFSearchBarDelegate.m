@@ -18,12 +18,18 @@
     
 }
 
+- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([searchBar.text length] + [text length]== 1) {
+        return NO;
+    }
+    return YES;
+}
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    
+    [self.delegate searchText:searchBar.text searchBarDelegate:self];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [self.delegate searchText:searchBar.text searchBarDelegate:self];
     [searchBar resignFirstResponder];
 }
 
