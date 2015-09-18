@@ -66,6 +66,7 @@ static CGFloat kHeightSearchBar = 80;
 - (TFTableViewDataSource*)tableViewDataSource{
     if (_tableViewDataSource == nil) {
         _tableViewDataSource = [[TFTableViewDataSource alloc] init];
+        _tableViewDataSource.delegate = self;
     }
     return _tableViewDataSource;
 }
@@ -120,6 +121,12 @@ static CGFloat kHeightSearchBar = 80;
            });
        }
    }];
+}
+
+#pragma mark - TFLoadCellDelegate
+
+- (void)loadNextSearchResult:(TFLoadTableViewCell*)cell{
+    
 }
 
 @end

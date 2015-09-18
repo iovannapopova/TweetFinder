@@ -27,9 +27,10 @@
 - (UIButton*)button{
     if (_button == nil) {
         _button = [[UIButton alloc] init];
-        _button.titleLabel.text = @"Load more...";
-        _button.titleLabel.textColor = [UIColor blueColor];
-        [_button addTarget:self action:@selector(buttonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+        [_button setTitle:@"Load more..." forState:UIControlStateNormal];
+        [_button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
+        [_button addTarget:self action:@selector(buttonTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
     }
     return _button;
 }
@@ -39,8 +40,8 @@
     self.button.frame = CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
 }
 
-- (void)buttonTouchUpInside:(id)sender{
-    
+- (void)buttonTouchUpInside{
+    [self.delegate loadNextSearchResult:self];
 }
 
 

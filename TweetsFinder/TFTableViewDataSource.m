@@ -9,7 +9,6 @@
 #import "TFTableViewDataSource.h"
 #import "TFSearchResult.h"
 #import "TFSearchResultTableViewCell.h"
-#import "TFLoadTableViewCell.h"
 
 typedef NS_ENUM(NSInteger, TFTableViewType){
     TFTableViewResultType,
@@ -42,7 +41,7 @@ typedef NS_ENUM(NSInteger, TFTableViewType){
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return [self.searchResultsArray count] > 0 ? 2 : 1;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -51,7 +50,7 @@ typedef NS_ENUM(NSInteger, TFTableViewType){
         case TFTableViewResultType:
         {
             static NSString* resultCellID = @"ResultCell";
-            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:resultCellID];
+            TFSearchResultTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:resultCellID];
             if (!cell) {
                 cell = [[TFSearchResultTableViewCell alloc] initWithReuseIdentifier:resultCellID];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -64,10 +63,11 @@ typedef NS_ENUM(NSInteger, TFTableViewType){
         case TFTableViewIndicatorType:
         {
             static NSString* indicatorCellID = @"IndicatorCell";
-            UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:indicatorCellID];
+            TFLoadTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:indicatorCellID];
             if (!cell) {
                 cell = [[TFLoadTableViewCell alloc] initWithReuseIdentifier:indicatorCellID];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                cell.delegate = self.delegate;
             }
             return cell;
         }

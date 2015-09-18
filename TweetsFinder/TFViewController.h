@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TFLoadTableViewCell.h"
 
-@interface TFViewController : UIViewController
+@interface TFViewController : UIViewController <TFLoadCellDelegate>
 
 @end
 

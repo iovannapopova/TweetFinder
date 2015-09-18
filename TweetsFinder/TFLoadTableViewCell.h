@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TFLoadTableViewCell;
+
+@protocol TFLoadCellDelegate <NSObject>
+
+- (void)loadNextSearchResult:(TFLoadTableViewCell*)cell;
+
+@end
 
 @interface TFLoadTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<TFLoadCellDelegate> delegate;
 
 - (instancetype)initWithReuseIdentifier:(NSString*)reuseID;
 
