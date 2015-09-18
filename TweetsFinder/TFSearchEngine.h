@@ -9,6 +9,7 @@
 @protocol TFSearchEngine <NSObject>
 
 -(void)searchForString:(NSString*)string completionHandler:(void(^)(NSArray*,NSError*))completionHandler;
+-(void)searchNextResult:(NSNumber*)nextResultID completionHandler:(void(^)(NSArray*,NSError*))completionHandler;
 
 @end
 

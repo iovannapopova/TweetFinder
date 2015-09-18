@@ -126,7 +126,15 @@ static CGFloat kHeightSearchBar = 80;
 #pragma mark - TFLoadCellDelegate
 
 - (void)loadNextSearchResult:(TFLoadTableViewCell*)cell{
-    
+    [self.searchEngine searchNextResult:[[self.tableViewDataSource.searchResultsArray lastObject] nextResultID] completionHandler:^(NSArray *array, NSError *error) {
+        if (!error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.tableViewDataSource.searchResultsArray = array;
+                self.tableViewDelegate.searchResultsArray = array;
+                [self.tableView reloadData];
+            });
+        }
+    }];
 }
 
 @end
